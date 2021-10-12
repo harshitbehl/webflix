@@ -1,0 +1,49 @@
+@import "variables";
+
+.navbar {
+  color: white;
+
+  &__container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left {
+    display: flex;
+  }
+
+  &__logo {
+    color: $brand-logo-color;
+    font-weight: 900;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3rem;
+
+    & span {
+      margin: 0 1rem;
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & span {
+      margin: 0 1rem;
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
+  }
+}
