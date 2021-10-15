@@ -11,8 +11,6 @@ function Navbar() {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
   };
 
-  console.log(isScrolled);
-
   return (
     <div className={isScrolled ? "navbar--scrolled" : "navbar"}>
       <div className="navbar__container">

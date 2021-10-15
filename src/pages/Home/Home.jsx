@@ -1,15 +1,19 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
+import Navbar from "../../components/navbar/Navbar";
+import Featured from "../../components/featured/Featured";
+import List from "../../components/list/List";
 import "./Home.scss";
 
 function Home() {
   return (
     <div className="home">
       <Navbar />
-      <img
-        src="https://images.unsplash.com/photo-1569003339405-ea396a5a8a90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-        alt=""
-      />
+      <Featured />
+      <List />
+      <List />
+      <List />
+      <List />
+      <List />
     </div>
   );
 }
