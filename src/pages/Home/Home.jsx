@@ -9,11 +9,13 @@ function Home() {
     <div className="home">
       <Navbar />
       <Featured />
-      <List />
-      <List />
-      <List />
-      <List />
-      <List />
+      <div className="home__list-container">
+        <List />
+        <List />
+        <List />
+        <List />
+        <List />
+      </div>
     </div>
   );
 }

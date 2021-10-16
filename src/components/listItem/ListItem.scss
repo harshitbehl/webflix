@@ -1,0 +1,117 @@
+.listItem {
+  width: 22rem;
+  height: 12.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  margin: 0 0.2rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+
+  &__wrapper {
+    transition: transform 0.5s ease;
+  }
+
+  &__image-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+
+  &:hover {
+    overflow: visible;
+    box-shadow: 2.5rem 2.5rem 10rem 8rem rgba(0, 0, 0, 1);
+    z-index: 1;
+
+    .listItem__wrapper {
+      transform: scale(1.5, 1.4) translateY(-20%); //20
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 999;
+    }
+
+    .listItem__image-container {
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+  }
+
+  &__info {
+    background-color: #181818;
+    color: white;
+    padding: 1.5rem 1rem 1rem 1rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &__info-icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .listItem__info-icon {
+      font-size: 2.4rem;
+      margin-right: 0.2rem;
+      color: whitesmoke;
+      font-weight: 300;
+    }
+  }
+
+  &__info-ratings {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    span {
+      font-size: 1.2rem;
+      margin-right: 0.4rem;
+    }
+
+    span:nth-child(1) {
+      color: #45d369;
+    }
+
+    span:nth-child(2) {
+      border: 1px solid #747474;
+      font-weight: 300;
+      padding: 0.1rem;
+    }
+
+    span:nth-child(3) {
+      font-weight: 300;
+    }
+
+    span:nth-child(4) {
+      border: 1px solid #747474;
+      font-size: 0.8rem;
+      font-weight: 100;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.2rem;
+    }
+  }
+
+  &__info-genres {
+    font-size: 1.2rem;
+    font-weight: 300;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    span {
+      margin-right: 0.4rem;
+    }
+
+    span:nth-child(even) {
+      font-size: 3rem;
+      color: #646464;
+    }
+  }
+}

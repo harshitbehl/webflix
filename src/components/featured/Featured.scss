@@ -1,5 +1,5 @@
 .featured {
-  height: 90vh;
+  height: 100vh;
   position: relative;
 
   &__showcase-image {
@@ -8,10 +8,18 @@
     object-fit: cover;
   }
 
+  &__overlay {
+    position: absolute;
+    background: linear-gradient(to top, rgb(20, 20, 20) 8%, transparent 25%);
+    height: 100%;
+    width: 100%;
+    top: 0;
+  }
+
   &__info {
     width: 35%;
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 5%;
   }
 

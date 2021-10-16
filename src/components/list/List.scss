@@ -1,0 +1,84 @@
+@import "variables";
+
+.list {
+  margin-bottom: 5rem;
+  position: relative;
+
+  &__title {
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 1rem 0;
+    margin-left: 5%;
+  }
+
+  &__wrapper {
+    display: flex;
+    position: relative;
+  }
+
+  &__arrowLeft-container {
+    width: 5%;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $main-color;
+    opacity: 0.1;
+    border-radius: 0 0.5rem 0.5rem 0;
+    cursor: pointer;
+    z-index: 1;
+
+    .list__arrowLeft-icon {
+      font-size: 4rem;
+      color: white;
+      visibility: hidden;
+    }
+  }
+
+  &__arrowLeft-container:hover {
+    opacity: 0.6;
+  }
+
+  &__arrowLeft-container:hover .list__arrowLeft-icon {
+    visibility: visible;
+  }
+
+  &__container {
+    display: flex;
+    margin-left: 5%;
+    // transform: translateX(0);
+    transition: all 0.4s ease;
+  }
+
+  &__arrowRight-container {
+    width: 5%;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $main-color;
+    opacity: 0.1;
+    border-radius: 0.5rem 0 0 0.5rem;
+    cursor: pointer;
+    z-index: 1;
+
+    .list__arrowRight-icon {
+      font-size: 4rem;
+      color: white;
+      visibility: hidden;
+    }
+  }
+
+  &__arrowRight-container:hover {
+    opacity: 0.6;
+  }
+
+  &__arrowRight-container:hover .list__arrowRight-icon {
+    visibility: visible;
+  }
+}

@@ -2,5 +2,10 @@
 
 .home {
   background-color: $main-color;
-  height: 100vh;
+  overflow: hidden;
+
+  &__list-container {
+    margin-top: -18rem;
+    position: relative;
+  }
 }
