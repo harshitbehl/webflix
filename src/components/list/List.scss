@@ -4,6 +4,10 @@
   margin-bottom: 5rem;
   position: relative;
 
+  &:hover {
+    z-index: 1;
+  }
+
   &__title {
     color: white;
     font-size: 2rem;
