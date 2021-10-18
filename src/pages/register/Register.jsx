@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { ArrowForwardIosOutlined } from "@material-ui/icons";
 import "./Register.scss";
 
 function Register() {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  const startHandler = () => {
+    setEmail(emailRef.current.value);
+  };
+
+  const membershipHandler = () => {
+    setPassword(passwordRef.current.value);
+  };
 
   return (
     <div className="register">
@@ -21,13 +32,25 @@ function Register() {
             Ready to watch? Enter your email to create or restart your
             membership.
           </p>
-          <div className="register__input-container">
-            <input type="email" placeholder="Email address" />
-            <button>
-              Get Started
-              <ArrowForwardIosOutlined className="register__arrow-icon" />
-            </button>
-          </div>
+          {!email ? (
+            <div className="register__input-container">
+              <input type="email" placeholder="Email address" ref={emailRef} />
+              <button onClick={startHandler}>
+                Get Started
+                <ArrowForwardIosOutlined className="register__arrow-icon" />
+              </button>
+            </div>
+          ) : (
+            <form className="register__input-container">
+              <input type="password" placeholder="Password" ref={passwordRef} />
+              <button
+                className="register__membership-button"
+                onClick={membershipHandler}
+              >
+                Start Membership
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </div>
