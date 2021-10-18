@@ -5,12 +5,10 @@ import {
   ThumbDownAltOutlined,
   ThumbUpAltOutlined,
 } from "@material-ui/icons";
+import trailer from "../../assets/trailer.mp4";
 import "./ListItem.scss";
 
 function ListItem() {
-  const trailer =
-    "https://www.youtube.com/embed/TcMBFSGVi1c?&autoplay=1&mute=1&controls=0";
-
   return (
     <div className="listItem">
       <div className="listItem__image-container">
@@ -19,13 +17,9 @@ function ListItem() {
           src="https://images.unsplash.com/photo-1534375971785-5c1826f739d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
           alt=""
         />
-        <iframe
-          className="listItem__video"
-          src={trailer}
-          title="YouTube video player"
-          frameborder="0"
-          allow=" autoplay "
-        ></iframe>
+        <video className="listItem__video" autoPlay muted loop>
+          <source src={trailer} type="video/mp4" />
+        </video>
       </div>
 
       <div className="listItem__info">
