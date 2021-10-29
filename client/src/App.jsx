@@ -8,10 +8,10 @@ import Watch from "./pages/watch/Watch";
 function App() {
   return (
     <div className="App">
-      {/* <Home /> */}
+      <Home />
       {/* <Watch /> */}
       {/* <Register /> */}
-      <Login />
+      {/* <Login /> */}
     </div>
   );
 }
