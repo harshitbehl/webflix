@@ -22,7 +22,7 @@ mongoose
 // Making Express accept json files
 app.use(express.json());
 
-// Endpoint
+// Endpoints
 app.use("/api/auth", authRoute);
 
 // Listen for requests
