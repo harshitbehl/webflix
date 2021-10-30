@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const authRoute = require("./routes/auth");
 const port = 4000;
 dotenv.config();
 
@@ -17,6 +18,12 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
+
+// Making Express accept json files
+app.use(express.json());
+
+// Endpoint
+app.use("/api/auth", authRoute);
 
 // Listen for requests
 app.listen(port, () => {
