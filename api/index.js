@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes/auth");
+const userRoute = require("./routes/users");
 const port = 4000;
 dotenv.config();
 
@@ -24,6 +25,7 @@ app.use(express.json());
 
 // Endpoints
 app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
 
 // Listen for requests
 app.listen(port, () => {
