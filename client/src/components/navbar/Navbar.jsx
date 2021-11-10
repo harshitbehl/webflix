@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Search, Notifications, ArrowDropDown } from "@material-ui/icons";
 import "./Navbar.scss";
 import { Avatar } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,9 +18,15 @@ function Navbar() {
         <div className="navbar__left">
           <span className="navbar__logo">Webflix</span>
           <div className="navbar__links">
-            <span>Home</span>
-            <span>TV Shows</span>
-            <span>Movies</span>
+            <Link to="/">
+              <span>Home</span>
+            </Link>
+            <Link to="/tvShows">
+              <span>TV Shows</span>
+            </Link>
+            <Link to="/movies">
+              <span>Movies</span>
+            </Link>
             <span>New &amp; Popular</span>
             <span>My List</span>
           </div>

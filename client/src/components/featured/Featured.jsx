@@ -2,7 +2,7 @@ import { InfoOutlined, PlayArrow } from "@material-ui/icons";
 import React from "react";
 import "./Featured.scss";
 
-function Featured() {
+function Featured({ type }) {
   return (
     <div className="featured">
       <img
@@ -11,6 +11,28 @@ function Featured() {
         alt=""
       />
       <div className="featured__overlay"></div>
+
+      {type && (
+        <div className="featured__category">
+          <h2>{type === "movies" ? "Movies" : "TV Shows"}</h2>
+          <select name="genre" id="genre">
+            <option>Genres</option>
+            <option value="adventure">Adventure</option>
+            <option value="comedy">Comedy</option>
+            <option value="crime">Crime</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="historical">Historical</option>
+            <option value="horror">Horror</option>
+            <option value="romance">Romance</option>
+            <option value="sci-fi">Sci-Fi</option>
+            <option value="thriller">Thriller</option>
+            <option value="western">Western</option>
+            <option value="animation">Animation</option>
+            <option value="drama">Drama</option>
+            <option value="documentary">Documentary</option>
+          </select>
+        </div>
+      )}
 
       <div className="featured__info">
         <div className="featured__title-container">

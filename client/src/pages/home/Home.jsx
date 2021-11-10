@@ -4,11 +4,11 @@ import Featured from "../../components/featured/Featured";
 import List from "../../components/list/List";
 import "./Home.scss";
 
-function Home() {
+function Home({ type }) {
   return (
     <div className="home">
       <Navbar />
-      <Featured />
+      <Featured type={type} />
       <div className="home__list-container">
         <List />
         <List />

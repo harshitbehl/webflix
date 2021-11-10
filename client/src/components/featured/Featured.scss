@@ -1,3 +1,5 @@
+@import "variables";
+
 .featured {
   height: 100vh;
   position: relative;
@@ -16,11 +18,37 @@
     top: 0;
   }
 
+  &__category {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+
+    h2 {
+      color: white;
+      font-size: 3.8rem;
+      font-weight: 500;
+    }
+    select {
+      margin-left: 5rem;
+      background-color: $main-color;
+      color: white;
+      padding: 0.5rem 1rem;
+      letter-spacing: 0.1rem;
+      border: 0.1rem solid white;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
   &__info {
     width: 35%;
     position: absolute;
     top: 20%;
     left: 5%;
+    z-index: 998;
   }
 
   &__title-container {
