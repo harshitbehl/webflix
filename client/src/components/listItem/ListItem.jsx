@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Add,
   PlayCircleFilledWhiteRounded,
@@ -7,16 +7,30 @@ import {
 } from "@material-ui/icons";
 import trailer from "../../assets/trailer.mp4";
 import "./ListItem.scss";
+import axios from "axios";
 
-function ListItem() {
+function ListItem({ item }) {
+  const [movie, setMovie] = useState({});
+
+  useEffect(() => {
+    const getMovie = async () => {
+      try {
+        const res = await axios.get("/movies/find/" + item, {
+          headers: {
+            token:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODIyMmZlZTZjNmNmMzRjOTY4MDk2MiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNjUzMDQyMCwiZXhwIjoxNjM2OTYyNDIwfQ.3mBfJaO8suEpsaOA_4cTDcifH7klClyvH1IVY4XztOU",
+          },
+        });
+        setMovie(res.data);
+      } catch (error) {}
+    };
+    getMovie();
+  }, [item]);
+
   return (
     <div className="listItem">
       <div className="listItem__image-container">
-        <img
-          className="listItem__image"
-          src="https://images.unsplash.com/photo-1534375971785-5c1826f739d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-          alt=""
-        />
+        <img className="listItem__image" src={movie.img} alt="" />
         <video className="listItem__video" autoPlay muted loop>
           <source src={trailer} type="video/mp4" />
         </video>
@@ -31,12 +45,12 @@ function ListItem() {
         </div>
         <div className="listItem__info-ratings">
           <span>98% Match</span>
-          <span>TV-14</span>
-          <span>4 Seasons</span>
+          <span>{movie.rating}</span>
+          <span>{movie.duration}</span>
           <span>HD</span>
         </div>
         <div className="listItem__info-genres">
-          <span>Explosive</span>
+          <span>{movie.genre}</span>
           <span>&middot;</span>
           <span>Exciting</span>
           <span>&middot;</span>

@@ -6,7 +6,7 @@ import {
 import ListItem from "../../components/listItem/ListItem";
 import "./List.scss";
 
-function List() {
+function List({ list }) {
   const [slideNumber, setSlideNumber] = useState(0);
   const listRef = useRef();
 
@@ -23,7 +23,7 @@ function List() {
 
   return (
     <div className="list">
-      <p className="list__title">Popular on Webflix</p>
+      <p className="list__title">{list.title}</p>
       <div className="list__wrapper">
         <div
           className="list__arrowLeft-container"
@@ -33,17 +33,9 @@ function List() {
         </div>
 
         <div className="list__container" ref={listRef}>
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
+          {list.content.map((item) => (
+            <ListItem item={item} />
+          ))}
         </div>
         <div
           className="list__arrowRight-container"
