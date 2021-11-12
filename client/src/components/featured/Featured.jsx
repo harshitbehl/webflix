@@ -1,13 +1,34 @@
+import React, { useEffect, useState } from "react";
 import { InfoOutlined, PlayArrow } from "@material-ui/icons";
-import React from "react";
 import "./Featured.scss";
+import axios from "axios";
 
 function Featured({ type }) {
+  const [content, setContent] = useState({});
+
+  useEffect(() => {
+    const getRandomContent = async () => {
+      try {
+        const res = await axios.get(`/movies/random?type=${type}`, {
+          headers: {
+            token:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODIyMmZlZTZjNmNmMzRjOTY4MDk2MiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNjUzMDQyMCwiZXhwIjoxNjM2OTYyNDIwfQ.3mBfJaO8suEpsaOA_4cTDcifH7klClyvH1IVY4XztOU",
+          },
+        });
+        setContent(res.data[0]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getRandomContent();
+  }, [type]);
+
   return (
     <div className="featured">
       <img
         className="featured__showcase-image"
-        src="https://images.unsplash.com/photo-1569003339405-ea396a5a8a90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+        src="https://images.unsplash.com/photo-1521714161819-15534968fc5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"
         alt=""
       />
       <div className="featured__overlay"></div>
@@ -38,7 +59,7 @@ function Featured({ type }) {
         <div className="featured__title-container">
           <img
             className="featured__title-image"
-            src="https://www.freepnglogos.com/uploads/avengers-png-logo/avengers-logo-png-transparent-avengers-logo-images-7.png"
+            src={content.imgTitle}
             alt=""
           />
         </div>

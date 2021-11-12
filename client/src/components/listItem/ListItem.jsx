@@ -31,7 +31,7 @@ function ListItem({ item }) {
     <Link to={{ pathname: "/watch", movie: movie }}>
       <div className="listItem">
         <div className="listItem__image-container">
-          <img className="listItem__image" src={movie.img} alt="" />
+          <img className="listItem__image" src={movie.imgThumbnail} alt="" />
           <video
             className="listItem__video"
             autoPlay
