@@ -5,9 +5,9 @@ import {
   ThumbDownAltOutlined,
   ThumbUpAltOutlined,
 } from "@material-ui/icons";
-import trailer from "../../assets/trailer.mp4";
 import "./ListItem.scss";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function ListItem({ item }) {
   const [movie, setMovie] = useState({});
@@ -28,36 +28,42 @@ function ListItem({ item }) {
   }, [item]);
 
   return (
-    <div className="listItem">
-      <div className="listItem__image-container">
-        <img className="listItem__image" src={movie.img} alt="" />
-        <video className="listItem__video" autoPlay muted loop>
-          <source src={trailer} type="video/mp4" />
-        </video>
-      </div>
+    <Link to={{ pathname: "/watch", movie: movie }}>
+      <div className="listItem">
+        <div className="listItem__image-container">
+          <img className="listItem__image" src={movie.img} alt="" />
+          <video
+            className="listItem__video"
+            autoPlay
+            muted
+            loop
+            src={movie.trailer}
+          />
+        </div>
 
-      <div className="listItem__info">
-        <div className="listItem__info-icons">
-          <PlayCircleFilledWhiteRounded className="listItem__info-icon" />
-          <Add className="listItem__info-icon" />
-          <ThumbUpAltOutlined className="listItem__info-icon" />
-          <ThumbDownAltOutlined className="listItem__info-icon" />
-        </div>
-        <div className="listItem__info-ratings">
-          <span>98% Match</span>
-          <span>{movie.rating}</span>
-          <span>{movie.duration}</span>
-          <span>HD</span>
-        </div>
-        <div className="listItem__info-genres">
-          <span>{movie.genre}</span>
-          <span>&middot;</span>
-          <span>Exciting</span>
-          <span>&middot;</span>
-          <span>Action</span>
+        <div className="listItem__info">
+          <div className="listItem__info-icons">
+            <PlayCircleFilledWhiteRounded className="listItem__info-icon" />
+            <Add className="listItem__info-icon" />
+            <ThumbUpAltOutlined className="listItem__info-icon" />
+            <ThumbDownAltOutlined className="listItem__info-icon" />
+          </div>
+          <div className="listItem__info-ratings">
+            <span>98% Match</span>
+            <span>{movie.rating}</span>
+            <span>{movie.duration}</span>
+            <span>HD</span>
+          </div>
+          <div className="listItem__info-genres">
+            <span>{movie.genre}</span>
+            <span>&middot;</span>
+            <span>Exciting</span>
+            <span>&middot;</span>
+            <span>Action</span>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

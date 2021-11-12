@@ -23,7 +23,7 @@ function Home({ type }) {
             },
           }
         );
-        console.log(res.data);
+
         setLists(res.data);
       } catch (error) {
         console.log(error);
