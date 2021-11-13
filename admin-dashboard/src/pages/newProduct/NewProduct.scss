@@ -1,0 +1,61 @@
+@import "variables";
+
+.newProduct {
+  flex: 5;
+  padding: 5rem;
+
+  &__title {
+    color: $primary-text-color;
+    font-size: 3rem;
+  }
+
+  &__body {
+    margin: 2.5rem 0;
+    border-radius: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+
+    label {
+      margin-bottom: 1.5rem;
+      width: 40%;
+      font-size: 2rem;
+      color: $primary-text-color;
+      font-weight: 700;
+    }
+
+    input {
+      margin-bottom: 2rem;
+      width: 40%;
+      outline: none;
+      font-size: 1.6rem;
+      padding: 1rem;
+      cursor: pointer;
+    }
+
+    select {
+      margin-bottom: 2rem;
+      width: 40%;
+      padding: 1rem;
+      font-size: 1.6rem;
+      outline: none;
+    }
+
+    button {
+      margin: auto 0 0 auto;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 1rem;
+      background-color: $primary-color-dark;
+      color: white;
+      font-size: 1.6rem;
+    }
+  }
+}

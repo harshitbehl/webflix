@@ -1,0 +1,66 @@
+@import "variables";
+
+.userDetails {
+  flex: 1;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  &__profileContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+
+  &__profileAvatar {
+    height: 5rem !important;
+    width: 5rem !important;
+  }
+
+  &__credContainer {
+    margin-left: 2rem;
+  }
+
+  &__profileName {
+    font-weight: 700;
+    color: $primary-text-color;
+    margin-bottom: 0.25rem;
+  }
+
+  &__profileTitle {
+    color: $secondary-text-color;
+  }
+
+  &__accountContainer {
+    margin-bottom: 2.5rem;
+
+    p {
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__accountTitle {
+    color: $secondary-text-color;
+  }
+
+  &__contactContainer {
+    margin-bottom: 2.5rem;
+
+    p {
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__contactTitle {
+    color: $secondary-text-color;
+  }
+
+  &__icon {
+    margin-right: 1rem;
+    font-size: 1.8rem !important;
+  }
+}

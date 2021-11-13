@@ -1,0 +1,32 @@
+@import "variables";
+
+.user {
+  flex: 5;
+  padding: 5rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    color: $primary-text-color;
+    font-size: 3rem;
+  }
+
+  &__create-button {
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-color: #26A69A;
+    color: white;
+    font-size: 1.6rem;
+  }
+
+  &__body {
+    margin: 2.5rem 0;
+    display: flex;
+  }
+}

@@ -1,0 +1,14 @@
+@import "variables";
+
+.widgetSm {
+  flex: 1;
+  margin: 2rem 1rem 2rem 2rem;
+  border-radius: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 2.5rem;
+
+  &__title {
+    color: $primary-text-color;
+    font-size: 2rem;
+  }
+}

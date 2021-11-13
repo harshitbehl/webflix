@@ -1,0 +1,60 @@
+@import "variables";
+
+.products {
+  flex: 5;
+  padding: 5rem;
+
+  &__dataGrid {
+    font-size: 1.6rem !important;
+    width: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .MuiDataGrid-columnHeaderTitle {
+    font-weight: 700 !important;
+    color: $primary-text-color;
+  }
+
+  &__product-cell {
+    display: flex;
+    align-items: center;
+
+    .products__image-container {
+      width: 4rem;
+      height: 4rem;
+      overflow: hidden;
+      border-radius: 50%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    span {
+      margin-left: 1rem;
+    }
+  }
+
+  &__action-cell {
+    display: flex;
+    align-items: center;
+
+    button {
+      border: none;
+      border-radius: 1rem;
+      padding: 0.8rem 1.2rem;
+      background-color: #66bb6a;
+      color: white;
+      cursor: pointer;
+    }
+
+    &-delete {
+      margin-left: 1rem;
+      cursor: pointer;
+      color: #ef5350;
+      font-size: 2.8rem !important;
+    }
+  }
+}

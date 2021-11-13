@@ -1,0 +1,19 @@
+@import "variables";
+
+.chart {
+  width: 100%;
+  padding: 2rem;
+  margin-top: 2rem;
+
+  &__container {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 1rem;
+    padding: 2.5rem;
+  }
+
+  &__title {
+    color: $primary-text-color;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+  }
+}

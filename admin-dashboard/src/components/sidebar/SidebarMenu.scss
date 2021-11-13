@@ -1,0 +1,32 @@
+@import "variables";
+
+.sidebarMenu {
+  &__title {
+    color: $secondary-text-color;
+  }
+
+  &__list {
+    padding: 1rem 0;
+  }
+
+  &__listItem {
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    color: $primary-text-color;
+    cursor: pointer;
+
+    &:hover {
+      background-color: whitesmoke;
+    }
+
+    // Material UI Icons
+    svg {
+      font-size: 2rem;
+    }
+
+    span {
+      margin-left: 1rem;
+    }
+  }
+}

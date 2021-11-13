@@ -1,0 +1,45 @@
+@import "variables";
+
+.widgetLgTableRow {
+  td {
+    padding: 1rem 0;
+  }
+
+  &__avatarCell {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 1rem;
+    }
+  }
+
+  &__date {
+    color: $secondary-text-color;
+  }
+
+  &__amount {
+    color: $secondary-text-color;
+  }
+
+  &__button {
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+
+    &.approved {
+      background-color: #e8f5e9;
+      color: #4caf50;
+    }
+
+    &.declined {
+      background-color: #ffebee;
+      color: #f44336;
+    }
+
+    &.pending {
+      background-color: #fff3e0;
+      color: #ff9800;
+    }
+  }
+}

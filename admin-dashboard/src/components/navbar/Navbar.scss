@@ -1,0 +1,94 @@
+@import "variables";
+
+.navbar {
+  width: 100%;
+  height: 5rem;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  &--scrolled {
+    width: 100%;
+    height: 5rem;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 0.1rem solid rgb(189, 189, 189, 0.2);
+    box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+
+    // Workaround for scrolled state for badge
+    .MuiBadge-badge {
+      background-color: $accent-color;
+      color: white;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__container {
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__left {
+    height: 100%;
+  }
+
+  &__logo {
+    height: 100%;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: right;
+    padding: 1rem 0;
+    position: relative;
+    color: $primary-color;
+    cursor: pointer;
+
+    span {
+      font-size: 1rem;
+      font-weight: 300;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: $primary-text-color;
+    }
+  }
+
+  &__right {
+    height: 100%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // Navbar Right Material UI Badge Icon
+  .MuiBadge-badge {
+    background-color: $accent-color;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  &__notification-icon {
+    font-size: 2.5rem !important;
+    color: $secondary-text-color;
+    cursor: pointer;
+  }
+
+  &__settings-icon {
+    font-size: 2.5rem !important;
+    color: $secondary-text-color;
+    cursor: pointer;
+  }
+
+  &__avatar {
+    height: 3.5rem !important;
+    width: 3.5rem !important;
+    cursor: pointer;
+  }
+}

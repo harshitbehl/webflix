@@ -1,0 +1,25 @@
+@import "variables";
+
+.widgetLg {
+  flex: 2;
+  margin: 2rem 2rem 2rem 1rem;
+  border-radius: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 2.5rem;
+
+  &__title {
+    color: $primary-text-color;
+    font-size: 2rem;
+  }
+
+  &__table {
+    margin: 2.5rem 0;
+    width: 100%;
+    text-align: left;
+    color: $primary-text-color;
+
+    th {
+      padding-bottom: 1rem;
+    }
+  }
+}

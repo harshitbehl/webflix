@@ -1,0 +1,49 @@
+@import "variables";
+
+.widgetSmItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5rem 0;
+
+  &__avatar-container {
+    flex: 1;
+  }
+
+  &__user-container {
+    text-align: left;
+    flex: 4;
+    margin: 0 1rem;
+  }
+
+  &__username {
+    font-weight: 700;
+    color: $primary-text-color;
+    margin-bottom: 0.25rem;
+  }
+
+  &__user-title {
+    font-weight: 300;
+    color: $secondary-text-color;
+    font-size: 1.5rem;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: $secondary-text-color;
+
+    span {
+      margin-left: 0.5rem;
+    }
+
+    &:hover {
+      background-color: #e4e4e4;
+    }
+  }
+}

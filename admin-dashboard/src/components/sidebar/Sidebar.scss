@@ -1,0 +1,17 @@
+@import "variables";
+
+.sidebar {
+  flex: 1;
+  padding: 5rem;
+  height: calc(100vh - 5rem); // Subtracting height of navbar
+  position: sticky;
+  top: 5rem;
+  box-shadow: -0.3rem 0 0.5rem 0 #555;
+
+  hr {
+    margin: 1rem 0;
+    border-top: 0.1rem solid $divider-color;
+    border-bottom: none;
+    opacity: 0.4;
+  }
+}
