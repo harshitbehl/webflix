@@ -52,7 +52,6 @@
     flex: 1;
     border-radius: 1rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    margin-left: 1rem;
     padding: 2.5rem;
   }
 
@@ -116,7 +115,7 @@
 
     label {
       margin-bottom: 1.5rem;
-      width: 40%;
+      width: 50%;
       font-size: 1.8rem;
       color: $primary-text-color;
       font-weight: 700;
@@ -124,7 +123,7 @@
 
     input {
       margin-bottom: 2rem;
-      width: 40%;
+      width: 50%;
       border: none;
       border-bottom: 0.1rem solid $secondary-text-color;
       padding-bottom: 1rem;

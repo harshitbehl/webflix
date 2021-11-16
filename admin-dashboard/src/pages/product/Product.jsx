@@ -1,16 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Chart from "../../components/chart/Chart";
-import { productData } from "../../chartData/dummyData";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowUpward } from "@material-ui/icons";
 
 import "./Product.scss";
 
 function Product() {
+  const location = useLocation();
+  const movie = location.movie;
+
   return (
     <div className="product">
       <div className="product__header">
-        <h2 className="product__title">Product</h2>
+        <h2 className="product__title">Movie</h2>
         <Link to="/newProduct">
           <button className="product__create-button">Create</button>
         </Link>
@@ -19,30 +20,25 @@ function Product() {
       <div className="product__body">
         {/* Top */}
         <div className="product__body-top">
-          <Chart title="Product Sales" data={productData} dataKey="Sales" />
-
           <div className="product__info-container">
             <div className="product__info-titleContainer">
               <div className="product__info-imageContainer">
-                <img
-                  src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                  alt=""
-                />
+                <img src={movie.img} alt="" />
               </div>
-              <span>Apple iPhone 12 Pro Max</span>
+              <span>{movie.title}</span>
             </div>
             <div className="product__info-details">
               <p>
-                ID: <span>1</span>
+                ID: <span>{movie._id}</span>
               </p>
               <p>
-                Sales: <span>3000</span>
+                Genre: <span>{movie.genre}</span>
               </p>
               <p>
-                Active: <span>Yes</span>
+                Duration: <span>{movie.duration}</span>
               </p>
               <p>
-                In Stock: <span>No</span>
+                Rating: <span>{movie.rating}</span>
               </p>
             </div>
           </div>
@@ -52,23 +48,23 @@ function Product() {
         <div className="product__body-bottom">
           <form>
             <div className="product__bottomForm-left">
-              <label>Product Name</label>
-              <input type="text" placeholder="Apple iPhone 12 Pro Max" />
-              <label>In Stock</label>
-              <select name="inStock" id="inStock">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-              <label>Active</label>
-              <select name="active" id="active">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
+              <label>Movie Title</label>
+              <input type="text" placeholder={movie.title} />
+              <label>Genre</label>
+              <input type="text" placeholder={movie.genre} />
+              <label>Duration</label>
+              <input type="text" placeholder={movie.duration} />
+              <label>Rating</label>
+              <input type="text" placeholder={movie.rating} />
+              <label>Trailer</label>
+              <input type="file" placeholder={movie.trailer} />
+              <label>Video</label>
+              <input type="file" placeholder={movie.video} />
             </div>
             <div className="product__bottomForm-right">
               <div>
                 <img
-                  src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                  src={movie.img}
                   alt=""
                 />
               </div>
