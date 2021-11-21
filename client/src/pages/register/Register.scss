@@ -1,4 +1,5 @@
 @import "variables";
+@import "../../App.scss";
 
 .register {
   height: 100vh;
@@ -31,6 +32,10 @@
     font-weight: 700;
     text-transform: uppercase;
     font-size: 3.8rem;
+
+    @include tablet {
+      font-size: 3rem;
+    }
   }
 
   &__signIn-button {
@@ -63,6 +68,14 @@
       margin-bottom: 1.5rem;
       letter-spacing: 0.1rem;
       word-spacing: 0.1rem;
+
+      @include tablet {
+        font-size: 3.75rem;
+      }
+
+      @include phone {
+        font-size: 2.5rem;
+      }
     }
 
     & h2 {
@@ -71,6 +84,14 @@
       margin-bottom: 3rem;
       letter-spacing: 0.1rem;
       word-spacing: 0.1rem;
+
+      @include tablet {
+        font-size: 1.87rem;
+      }
+
+      @include phone {
+        font-size: 1.25rem;
+      }
     }
 
     & p {
@@ -78,6 +99,14 @@
       font-weight: 300;
       margin-bottom: 2rem;
       word-spacing: 0.1rem;
+
+      @include tablet {
+        font-size: 1.5rem;
+      }
+
+      @include phone {
+        font-size: 1rem;
+      }
     }
   }
 
@@ -88,6 +117,14 @@
     width: 66.5rem;
     box-shadow: 2rem 2rem 10rem 6rem rgb(0, 0, 0, 0.8);
 
+    @include tablet {
+      width: 49.87rem;
+    }
+
+    @include phone {
+      width: 33.25rem;
+    }
+
     input {
       height: 6rem;
       width: 75%;
@@ -95,6 +132,15 @@
       font-size: 1.6rem;
       border: 0.1rem solid rgb(211, 211, 211, 0.5);
       outline: none;
+
+      @include tablet {
+        height: 4.5rem;
+      }
+
+      @include phone {
+        height: 3rem;
+        font-size: 1.2rem;
+      }
     }
 
     button {
@@ -111,14 +157,40 @@
       border: none;
       cursor: pointer;
 
+      @include tablet {
+        height: 4.5rem;
+        font-size: 1.87rem;
+      }
+
+      @include phone {
+        height: 3rem;
+        font-size: 1.25rem;
+      }
+
       .register__arrow-icon {
         font-size: 2rem;
         margin-left: 1rem;
+
+        @include tablet {
+          font-size: 1.5rem;
+        }
+
+        @include phone {
+          font-size: 1rem;
+        }
       }
     }
 
     .register__membership-button {
       font-size: 1.8rem;
+
+      @include tablet {
+        font-size: 1.35rem;
+      }
+
+      @include phone {
+        font-size: 0.9rem;
+      }
     }
 
     button:hover {

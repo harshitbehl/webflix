@@ -1,4 +1,5 @@
 @import "variables";
+@import "../../App.scss";
 
 .featured {
   height: 100vh;
@@ -49,6 +50,10 @@
     top: 20%;
     left: 5%;
     z-index: 998;
+
+    @include phone {
+      width: 75%;
+    }
   }
 
   &__title-container {
@@ -63,6 +68,10 @@
     animation-duration: 2s;
     animation-delay: 5s;
     animation-fill-mode: forwards;
+
+    @include phone {
+      animation: none;
+    }
   }
 
   @keyframes title-image-animation {
@@ -84,6 +93,10 @@
     animation-duration: 2s;
     animation-delay: 4.5s;
     animation-fill-mode: forwards;
+
+    @include phone {
+      animation: none;
+    }
   }
 
   @keyframes hide-description {

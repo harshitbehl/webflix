@@ -1,4 +1,5 @@
 @import "variables";
+@import "../../App.scss";
 
 .login {
   height: 100vh;
@@ -27,6 +28,14 @@
     font-weight: 700;
     text-transform: uppercase;
     font-size: 5rem;
+
+    @include tablet {
+      font-size: 3.75rem;
+    }
+
+    @include phone {
+      font-size: 3rem;
+    }
   }
 
   &__container {
@@ -44,6 +53,14 @@
     padding: 6.5rem;
     border-radius: 0.5rem;
     width: 45rem;
+
+    @include tablet {
+      transform: scale(0.75);
+    }
+
+    @include phone {
+      transform: scale(0.9);
+    }
 
     h1 {
       color: white;
