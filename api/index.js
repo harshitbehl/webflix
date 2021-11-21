@@ -31,7 +31,22 @@ app.use("/api/users", userRoute);
 app.use("/api/movies", movieRoute);
 app.use("/api/lists", listRoute);
 
+// // Admin Paths
+// app.use(
+//   "/admin",
+//   express.static(path.join(__dirname, "/admin-dashboard/build"))
+// );
+// app.get("/admin/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "admin-dashboard/build", "index.html"));
+// });
+
+// // Client Paths
+// app.use("/client", express.static(path.join(__dirname, "/client/build")));
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+// });
+
 // Listen for requests
-app.listen(port, () => {
-  console.log(`App listening at localhost:${port}`);
+app.listen(process.env.PORT || port, () => {
+  console.log(`Backend is running...`);
 });

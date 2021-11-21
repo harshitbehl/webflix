@@ -3,9 +3,13 @@ import { Search, Notifications, ArrowDropDown } from "@material-ui/icons";
 import "./Navbar.scss";
 import { Avatar } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../authContext/AuthContext";
+import { logout } from "../../authContext/AuthActions";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { dispatch } = useContext(AuthContext);
 
   // JS Window Scroll Method, whenever we scroll it runs the function
   window.onscroll = () => {
@@ -53,7 +57,7 @@ function Navbar() {
             />
             <div className="navbar__dropdown-options">
               <span>Settings</span>
-              <span>Logout</span>
+              <span onClick={() => dispatch(logout())}>Logout</span>
             </div>
           </div>
         </div>

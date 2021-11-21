@@ -3,7 +3,7 @@ import { InfoOutlined, PlayArrow } from "@material-ui/icons";
 import "./Featured.scss";
 import axios from "axios";
 
-function Featured({ type }) {
+function Featured({ type, setGenre }) {
   const [content, setContent] = useState({});
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function Featured({ type }) {
         const res = await axios.get(`/movies/random?type=${type}`, {
           headers: {
             token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODIyMmZlZTZjNmNmMzRjOTY4MDk2MiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNjUzMDQyMCwiZXhwIjoxNjM2OTYyNDIwfQ.3mBfJaO8suEpsaOA_4cTDcifH7klClyvH1IVY4XztOU",
+              "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
           },
         });
         setContent(res.data[0]);
@@ -26,17 +26,17 @@ function Featured({ type }) {
 
   return (
     <div className="featured">
-      <img
-        className="featured__showcase-image"
-        src="https://images.unsplash.com/photo-1521714161819-15534968fc5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"
-        alt=""
-      />
+      <img className="featured__showcase-image" src={content.img} alt="" />
       <div className="featured__overlay"></div>
 
       {type && (
         <div className="featured__category">
-          <h2>{type === "movies" ? "Movies" : "TV Shows"}</h2>
-          <select name="genre" id="genre">
+          <h2>{type === "movie" ? "Movies" : "TV Shows"}</h2>
+          <select
+            name="genre"
+            id="genre"
+            onChange={(event) => setGenre(event.target.value)}
+          >
             <option>Genres</option>
             <option value="adventure">Adventure</option>
             <option value="comedy">Comedy</option>
@@ -69,6 +69,7 @@ function Featured({ type }) {
           superhero friend independent, while his pal Iron Man supports
           government control.
         </p>
+
         <div className="featured__buttons">
           <button className="featured__play-button">
             <PlayArrow style={{ fontSize: "2.8rem" }} />

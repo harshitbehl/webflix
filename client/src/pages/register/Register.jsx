@@ -1,26 +1,43 @@
 import React, { useRef, useState } from "react";
 import { ArrowForwardIosOutlined } from "@material-ui/icons";
+import axios from "axios";
+import { useHistory } from "react-router";
+
 import "./Register.scss";
+import { Link } from "react-router-dom";
 
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const history = useHistory();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const usernameRef = useRef();
 
   const startHandler = () => {
     setEmail(emailRef.current.value);
   };
 
-  const membershipHandler = () => {
+  const membershipHandler = async (event) => {
+    event.preventDefault();
     setPassword(passwordRef.current.value);
+    setUsername(usernameRef.current.value);
+    try {
+      await axios.post("auth/register", { email, username, password });
+      history.push("/login");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <div className="register">
       <header className="register__header">
         <span className="register__logo">Webflix</span>
-        <button className="register__signIn-button">Sign In</button>
+        <Link to="/login">
+          <button className="register__signIn-button">Sign In</button>
+        </Link>
       </header>
       <div className="register__container">
         <div className="register__showcase">
@@ -42,6 +59,7 @@ function Register() {
             </div>
           ) : (
             <form className="register__input-container">
+              <input type="username" placeholder="Username" ref={usernameRef} />
               <input type="password" placeholder="Password" ref={passwordRef} />
               <button
                 className="register__membership-button"

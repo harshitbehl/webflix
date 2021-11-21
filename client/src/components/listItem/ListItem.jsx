@@ -18,26 +18,34 @@ function ListItem({ item }) {
         const res = await axios.get("/movies/find/" + item, {
           headers: {
             token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODIyMmZlZTZjNmNmMzRjOTY4MDk2MiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNjUzMDQyMCwiZXhwIjoxNjM2OTYyNDIwfQ.3mBfJaO8suEpsaOA_4cTDcifH7klClyvH1IVY4XztOU",
+              "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
           },
         });
         setMovie(res.data);
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
     };
     getMovie();
   }, [item]);
+
+  console.log(movie);
 
   return (
     <Link to={{ pathname: "/watch", movie: movie }}>
       <div className="listItem">
         <div className="listItem__image-container">
-          <img className="listItem__image" src={movie.imgThumbnail} alt="" />
+          <img
+            className="listItem__image"
+            src={movie && movie.imgThumbnail}
+            alt=""
+          />
           <video
             className="listItem__video"
             autoPlay
             muted
             loop
-            src={movie.trailer}
+            src={movie && movie.trailer}
           />
         </div>
 
@@ -50,12 +58,12 @@ function ListItem({ item }) {
           </div>
           <div className="listItem__info-ratings">
             <span>98% Match</span>
-            <span>{movie.rating}</span>
-            <span>{movie.duration}</span>
+            <span>{movie && movie.rating}</span>
+            <span>{movie && movie.duration}</span>
             <span>HD</span>
           </div>
           <div className="listItem__info-genres">
-            <span>{movie.genre}</span>
+            <span>{movie && movie.genre}</span>
             <span>&middot;</span>
             <span>Exciting</span>
             <span>&middot;</span>

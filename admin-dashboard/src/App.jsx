@@ -10,6 +10,9 @@ import NewUser from "./pages/newUser/NewUser";
 import Products from "./pages/products/Products";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
+import Lists from "./pages/lists/Lists";
+import List from "./pages/list/List";
+import NewList from "./pages/newList/NewList";
 import { AuthContext } from "./context/authContext/AuthContext";
 
 import "./App.scss";
@@ -46,6 +49,15 @@ function App() {
               </Route>
               <Route path="/newProduct">
                 <NewProduct />
+              </Route>
+              <Route path="/lists">
+                <Lists />
+              </Route>
+              <Route path="/list/:listId">
+                <List />
+              </Route>
+              <Route path="/newList">
+                <NewList />
               </Route>
             </div>
           </>

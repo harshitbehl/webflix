@@ -13,7 +13,7 @@ function WidgetSm() {
         const res = await axios.get("/users?new=true", {
           headers: {
             token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODIyMmZlZTZjNmNmMzRjOTY4MDk2MiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNjc3ODMxNCwiZXhwIjoxNjM3MjEwMzE0fQ.BczNjByB7VKOLgm0n5ueNAtmjZLQbrMn-m95vIriqDU",
+              "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
           },
         });
         setNewUsers(res.data);
@@ -30,7 +30,7 @@ function WidgetSm() {
       <h3 className="widgetSm__title">New Members</h3>
       <ul className="widgetSm__list">
         {newUsers.map((user) => (
-          <WidgetSmItem username={user.username} profilePic={user.profilePic}/>
+          <WidgetSmItem username={user.username} profilePic={user.profilePic} />
         ))}
       </ul>
     </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Assessment,
-  AttachMoney,
   ChatBubbleOutline,
   DynamicFeed,
   Equalizer,
@@ -12,6 +11,7 @@ import {
   Report,
   TrendingUp,
   WorkOutline,
+  List,
 } from "@material-ui/icons";
 
 import "./Sidebar.scss";
@@ -34,7 +34,7 @@ function Sidebar() {
         listSpec={[
           { text: "Users", icon: <PeopleAlt />, link: "/users" },
           { text: "Movies", icon: <PlayCircleOutline />, link: "/movies" },
-          { text: "Transactions", icon: <AttachMoney /> },
+          { text: "Lists", icon: <List />, link: "/lists" },
           { text: "Reports", icon: <Assessment /> },
         ]}
       />
